@@ -1,14 +1,22 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Transition } from '@headlessui/react'
 import classNames from 'classnames'
+import TruffleImage from '../../assets/truffle-ghibli.jpeg'
+import { fireConfetti } from '../../util/fireConfetti'
 
 type Props = {
   isOpen: boolean
   message: string
   variant?: 'success' | 'warning'
+  confetti?: boolean
 }
 
-export const Alert = ({ isOpen, message, variant = 'warning' }: Props) => {
+export const Alert = ({
+  isOpen,
+  message,
+  variant = 'warning',
+  confetti,
+}: Props) => {
   const classes = classNames(
     'fixed top-16 left-1/2 transform -translate-x-1/2 max-w-sm w-full shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden',
     {
@@ -16,6 +24,12 @@ export const Alert = ({ isOpen, message, variant = 'warning' }: Props) => {
       'bg-blue-500 text-white': variant === 'success',
     }
   )
+
+  useEffect(() => {
+    if (isOpen && confetti) {
+      fireConfetti()
+    }
+  }, [isOpen, confetti])
 
   return (
     <Transition
@@ -31,6 +45,11 @@ export const Alert = ({ isOpen, message, variant = 'warning' }: Props) => {
       <div className={classes}>
         <div className="p-4">
           <p className="text-sm text-center font-medium">{message}</p>
+          {variant === 'success' && (
+            <div className="flex justify-center items-center p-4">
+              <img src={TruffleImage} alt="Success" className="w-50 h-50" />
+            </div>
+          )}
         </div>
       </div>
     </Transition>

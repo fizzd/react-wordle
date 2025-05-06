@@ -1,4 +1,5 @@
 import { MAX_CHALLENGES } from '../constants/settings'
+import { isTodaySunday } from '../util/dateUtils'
 import {
   GameStats,
   loadStatsFromLocalStorage,
@@ -16,11 +17,14 @@ export const addStatsForCompletedGame = (
 
   stats.totalGames += 1
 
-  if (count >= MAX_CHALLENGES) {
+  if (count >= MAX_CHALLENGES && !isTodaySunday()) {
     // A fail situation
     stats.currentStreak = 0
     stats.gamesFailed += 1
   } else {
+    if (count > 5) {
+      count = 5
+    }
     stats.winDistribution[count] += 1
     stats.currentStreak += 1
 

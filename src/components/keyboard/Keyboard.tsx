@@ -2,6 +2,7 @@ import { getStatuses } from '../../lib/statuses'
 import { Key } from './Key'
 import { useEffect } from 'react'
 import { ENTER_TEXT, DELETE_TEXT } from '../../constants/strings'
+import { BackspaceIcon } from '@heroicons/react/outline'
 
 type Props = {
   onChar: (value: string) => void
@@ -86,7 +87,7 @@ export const Keyboard = ({
             isRevealing={isRevealing}
           />
         ))}
-        <Key width={65.4} value="DELETE" onClick={onClick}>
+        <Key width={65.4} value="DELETE" icon={BackspaceIcon} onClick={onClick}>
           {DELETE_TEXT}
         </Key>
       </div>
