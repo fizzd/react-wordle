@@ -11,6 +11,7 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
+import { SundayModal } from './components/modals/SundayModal'
 import {
   GAME_TITLE,
   WIN_MESSAGES,
@@ -34,6 +35,7 @@ import {
 } from './lib/localStorage'
 
 import './App.css'
+import { isTodaySunday } from './util/dateUtils'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -46,6 +48,7 @@ function App() {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
   const [isNotEnoughLetters, setIsNotEnoughLetters] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
+  const [isSundayModalOpen, setIsSundayModalOpen] = useState(false)
   const [isWordNotFoundAlertOpen, setIsWordNotFoundAlertOpen] = useState(false)
   const [isGameLost, setIsGameLost] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(
@@ -73,6 +76,12 @@ function App() {
   })
 
   const [stats, setStats] = useState(() => loadStats())
+
+  useEffect(() => {
+    if (isTodaySunday()) {
+      setIsSundayModalOpen(true)
+    }
+  }, [])
 
   useEffect(() => {
     if (isDarkMode) {
@@ -230,6 +239,10 @@ function App() {
         isOpen={isAboutModalOpen}
         handleClose={() => setIsAboutModalOpen(false)}
       />
+      <SundayModal
+        isOpen={isSundayModalOpen}
+        handleClose={() => setIsSundayModalOpen(false)}
+      />
 
       <button
         type="button"
@@ -249,6 +262,7 @@ function App() {
         message={successAlert}
         isOpen={successAlert !== ''}
         variant="success"
+        confetti={true}
       />
     </div>
   )

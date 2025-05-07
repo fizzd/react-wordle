@@ -10,6 +10,7 @@ type Props = {
   status?: CharStatus
   onClick: (value: string) => void
   isRevealing?: boolean
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>
 }
 
 export const Key = ({
@@ -19,6 +20,7 @@ export const Key = ({
   value,
   onClick,
   isRevealing,
+  icon,
 }: Props) => {
   const keyDelayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH
 
@@ -47,9 +49,11 @@ export const Key = ({
     event.currentTarget.blur()
   }
 
+  const Icon = icon
+
   return (
     <button style={styles} className={classes} onClick={handleClick}>
-      {children || value}
+      {Icon ? <Icon className="h-5 w-5" /> : children || value}
     </button>
   )
 }

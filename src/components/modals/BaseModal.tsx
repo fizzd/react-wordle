@@ -1,15 +1,23 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XCircleIcon } from '@heroicons/react/outline'
+import classNames from 'classnames'
 
 type Props = {
   title: string
   children: React.ReactNode
   isOpen: boolean
   handleClose: () => void
+  highlight?: boolean
 }
 
-export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
+export const BaseModal = ({
+  title,
+  children,
+  isOpen,
+  handleClose,
+  highlight,
+}: Props) => {
   return (
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog
@@ -57,7 +65,13 @@ export const BaseModal = ({ title, children, isOpen, handleClose }: Props) => {
                 <div className="text-center">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100"
+                    className={classNames(
+                      'inline text-lg leading-6 font-medium text-gray-900 dark:text-gray-100',
+                      {
+                        'bg-yellow-200 text-yellow-800 px-2 py-1 rounded-md dark:bg-[rgb(206,138,254)]':
+                          highlight,
+                      }
+                    )}
                   >
                     {title}
                   </Dialog.Title>

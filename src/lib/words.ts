@@ -1,11 +1,17 @@
 import { WORDS } from '../constants/wordlist'
+import { SPECIAL_WORDS } from '../constants/wordlistSpecial'
 import { VALID_GUESSES } from '../constants/validGuesses'
+import { isTodaySunday } from '../util/dateUtils'
 
 export const isWordInWordList = (word: string) => {
-  return (
-    WORDS.includes(word.toLowerCase()) ||
-    VALID_GUESSES.includes(word.toLowerCase())
-  )
+  if (!isTodaySunday()) {
+    return (
+      WORDS.includes(word.toLowerCase()) ||
+      VALID_GUESSES.includes(word.toLowerCase())
+    )
+  } else {
+    return true
+  }
 }
 
 export const isWinningWord = (word: string) => {
@@ -13,18 +19,47 @@ export const isWinningWord = (word: string) => {
 }
 
 export const getWordOfDay = () => {
-  // January 1, 2022 Game Epoch
-  const epochMs = new Date('January 1, 2022 00:00:00').valueOf()
+  const epochMs = new Date('May 4, 2025 00:00:00').valueOf()
   const now = Date.now()
   const msInDay = 86400000
+
   const index = Math.floor((now - epochMs) / msInDay)
   const nextday = (index + 1) * msInDay + epochMs
+
+  const isSunday = isTodaySunday()
+
+  if (isSunday) {
+    // Count how many Sundays have passed since epoch
+    const sundaysPassed = countSundaysSinceEpoch(epochMs, now)
+    const sundayWord =
+      SPECIAL_WORDS[sundaysPassed % SPECIAL_WORDS.length].toUpperCase()
+
+    return {
+      solution: sundayWord,
+      solutionIndex: sundaysPassed,
+      tomorrow: nextday,
+    }
+  }
 
   return {
     solution: WORDS[index % WORDS.length].toUpperCase(),
     solutionIndex: index,
     tomorrow: nextday,
   }
+}
+
+function countSundaysSinceEpoch(epochMs: number, nowMs: number): number {
+  const msInDay = 86400000
+  let count = 0
+
+  for (let time = epochMs; time <= nowMs; time += msInDay) {
+    const date = new Date(time)
+    if (date.getDay() === 0) {
+      count++
+    }
+  }
+
+  return count - 1 // subtract 1 if you don't want to count today unless it's complete
 }
 
 export const { solution, solutionIndex, tomorrow } = getWordOfDay()
