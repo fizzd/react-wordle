@@ -27,10 +27,11 @@ export const getWordOfDay = () => {
   const nextday = (index + 1) * msInDay + epochMs
 
   const isSunday = isTodaySunday()
+  const sundaysPassed = countSundaysSinceEpoch(epochMs, now)
 
+  
   if (isSunday) {
     // Count how many Sundays have passed since epoch
-    const sundaysPassed = countSundaysSinceEpoch(epochMs, now)
     const sundayWord =
       SPECIAL_WORDS[sundaysPassed % SPECIAL_WORDS.length].toUpperCase()
 
@@ -41,9 +42,11 @@ export const getWordOfDay = () => {
     }
   }
 
+  const indexAdj = index - sundaysPassed
+  
   return {
-    solution: WORDS[index % WORDS.length].toUpperCase(),
-    solutionIndex: index,
+    solution: WORDS[indexAdj % WORDS.length].toUpperCase(),
+    solutionIndex: indexAdj,
     tomorrow: nextday,
   }
 }
