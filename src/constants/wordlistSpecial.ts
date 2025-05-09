@@ -3,6 +3,7 @@ export const SPECIAL_WORDS = [
   'frisky',
   'walter',
   'nobita',
+  'totoro',
   'ginger',
   'friday',
   'azirah',
