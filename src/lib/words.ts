@@ -19,7 +19,7 @@ export const isWinningWord = (word: string) => {
 }
 
 export const getWordOfDay = () => {
-  const epochMs = new Date('May 4, 2025 00:00:00').valueOf()
+  const epochMs = new Date('May 9, 2025 00:00:00').valueOf()
   const now = Date.now()
   const msInDay = 86400000
 

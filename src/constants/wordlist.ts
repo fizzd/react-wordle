@@ -1,4 +1,7 @@
 export const WORDS = [
+  'teorem',
+  'mempan',
+  'teriak',
   'mereka',
   'dengan',
   'jangan',
@@ -905,7 +908,6 @@ export const WORDS = [
   'walkie',
   'dering',
   'kurnia',
-  'teriak',
   'cergas',
   'marmar',
   'mortar',
@@ -1639,7 +1641,4 @@ export const WORDS = [
   'azimut',
   'barbar',
   'kiblat',
-  'teorem',
-  'mempan',
-  'teraan',
 ]

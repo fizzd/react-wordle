@@ -1,4 +1,5 @@
 export const SPECIAL_WORDS = [
+  'hashim',
   'frisky',
   'walter',
   'nobita',
@@ -7,7 +8,6 @@ export const SPECIAL_WORDS = [
   'azirah',
   'aishah',
   'deanna',
-  'hashim',
   'london',
   'jannah',
   'waffle',
