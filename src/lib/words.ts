@@ -29,7 +29,6 @@ export const getWordOfDay = () => {
   const isSunday = isTodaySunday()
   const sundaysPassed = countSundaysSinceEpoch(epochMs, now)
 
-  
   if (isSunday) {
     // Count how many Sundays have passed since epoch
     const sundayWord =
@@ -43,7 +42,7 @@ export const getWordOfDay = () => {
   }
 
   const indexAdj = index - sundaysPassed
-  
+
   return {
     solution: WORDS[indexAdj % WORDS.length].toUpperCase(),
     solutionIndex: indexAdj,
@@ -62,7 +61,7 @@ function countSundaysSinceEpoch(epochMs: number, nowMs: number): number {
     }
   }
 
-  return count - 1 // subtract 1 if you don't want to count today unless it's complete
+  return isTodaySunday() ? count - 1 : count // subtract 1 if you don't want to count today unless it's complete
 }
 
 export const { solution, solutionIndex, tomorrow } = getWordOfDay()
