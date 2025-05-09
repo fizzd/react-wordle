@@ -13,13 +13,18 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
       handleClose={handleClose}
     >
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Ini adalah versi sumber terbuka bagi permainan meneka perkataan yang
-        kita semua tahu dan cinta -{' '}
+        Dibina oleh d&h dengan inspirasi daripada -{' '}
+        <a
+          href="https://www.katapat.com"
+          className="underline font-bold"
+        >
+          Katapat
+        </a>{' '} dan menggunakan -{' '}
         <a
           href="https://github.com/cwackerfuss/react-wordle"
           className="underline font-bold"
         >
-          semak kod di sini
+          Wordle versi sumber terbuka
         </a>{' '}
       </p>
     </BaseModal>
