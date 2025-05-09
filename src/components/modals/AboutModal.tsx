@@ -13,13 +13,13 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
       handleClose={handleClose}
     >
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Dibina oleh d&h dengan inspirasi daripada -{' '}
+        Dibina oleh d&h dengan inspirasi daripada{' '}
         <a
-          href="https://www.katapat.com"
+          href="https://www.projecteugene.com/katapat.html"
           className="underline font-bold"
         >
           Katapat
-        </a>{' '} dan menggunakan -{' '}
+        </a>{' '} dan menggunakan{' '}
         <a
           href="https://github.com/cwackerfuss/react-wordle"
           className="underline font-bold"
