@@ -1,6 +1,6 @@
 export const WORDS = [
   'teorem', //fri
-  'mempan', //sat
+  'ciuman', //sat
   'mereka', //sun -act mon if -1
   'tolong', //mon
   'burung',
