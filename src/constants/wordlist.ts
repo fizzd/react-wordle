@@ -10,7 +10,7 @@ export const WORDS = [
   'muntah',
   'tandas',
   'teriak', //wed
-  'kerana', //thu
+  'nyamuk',
   'datang', //fri - act sat
   'kenapa', //sat - act mon
   'sangat', //sun - act tue
@@ -26,6 +26,8 @@ export const WORDS = [
   'sedang',
   'nampak',
   'monyet',
+  'korban',
+  'kerbau',
   'berada',
   'tetapi',
   'bahawa',
@@ -39,7 +41,6 @@ export const WORDS = [
   'tengok',
   'tangan',
   'berapa',
-  'sebuah',
   'selalu',
   'wanita',
   'paling',
@@ -299,7 +300,6 @@ export const WORDS = [
   'remaja',
   'puncak',
   'tumbuh',
-  'dijual',
   'hargai',
   'perahu',
   'rantai',
@@ -315,7 +315,6 @@ export const WORDS = [
   'subjek',
   'siaran',
   'almari',
-  'korban',
   'tampak',
   'dompet',
   'junior',
@@ -649,7 +648,6 @@ export const WORDS = [
   'ajaran',
   'carian',
   'ambang',
-  'nyamuk',
   'faktor',
   'apatah',
   'besbol',
@@ -662,7 +660,6 @@ export const WORDS = [
   'kondom',
   'amalan',
   'patuhi',
-  'kerbau',
   'suntuk',
   'melayu',
   'silang',
