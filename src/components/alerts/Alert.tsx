@@ -7,7 +7,7 @@ import { fireConfetti } from '../../util/fireConfetti'
 type Props = {
   isOpen: boolean
   message: string
-  variant?: 'success' | 'warning'
+  variant?: 'success' | 'warning' | 'copied'
   confetti?: boolean
 }
 
@@ -21,15 +21,15 @@ export const Alert = ({
     'fixed top-16 left-1/2 transform -translate-x-1/2 max-w-sm w-full shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden',
     {
       'bg-rose-500 text-white': variant === 'warning',
-      'bg-blue-500 text-white': variant === 'success',
+      'bg-blue-500 text-white': variant === 'success' || variant === 'copied',
     }
   )
 
   useEffect(() => {
-    if (isOpen && confetti) {
+    if (isOpen && confetti && variant === 'success') {
       fireConfetti()
     }
-  }, [isOpen, confetti])
+  }, [isOpen, confetti, variant])
 
   return (
     <Transition

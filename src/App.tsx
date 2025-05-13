@@ -26,6 +26,7 @@ import {
   MAX_CHALLENGES,
   ALERT_TIME_MS,
   REVEAL_TIME_MS,
+  WIN_ALERT_TIME_MS,
 } from './constants/settings'
 import { isWordInWordList, isWinningWord, solution } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
@@ -60,6 +61,7 @@ function App() {
   )
   const [successAlert, setSuccessAlert] = useState('')
   const [isRevealing, setIsRevealing] = useState(false)
+  const [variant, setVariant] = useState<'success' | 'warning' | 'copied'>()
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.solution !== solution) {
@@ -106,11 +108,12 @@ function App() {
         setSuccessAlert(
           WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
         )
+        setVariant('success')
 
         setTimeout(() => {
           setSuccessAlert('')
           setIsStatsModalOpen(true)
-        }, ALERT_TIME_MS)
+        }, WIN_ALERT_TIME_MS)
       }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
     }
     if (isGameLost) {
@@ -232,6 +235,8 @@ function App() {
         isGameWon={isGameWon}
         handleShare={() => {
           setSuccessAlert(GAME_COPIED_MESSAGE)
+          setVariant('copied')
+          setIsStatsModalOpen(false)
           return setTimeout(() => setSuccessAlert(''), ALERT_TIME_MS)
         }}
       />
@@ -261,7 +266,7 @@ function App() {
       <Alert
         message={successAlert}
         isOpen={successAlert !== ''}
-        variant="success"
+        variant={variant}
         confetti={true}
       />
     </div>
