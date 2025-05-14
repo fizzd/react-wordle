@@ -11,7 +11,7 @@ export const WORDS = [
   'tandas',
   'teriak', //wed
   'nyamuk',
-  'datang', //fri - act sat
+  'kancil', //fri - act sat
   'kenapa', //sat - act mon
   'sangat', //sun - act tue
   'terima', //mon 
