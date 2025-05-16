@@ -6,28 +6,33 @@ export const WORDS = [
   'burung',
   'belang',
   'jangan', //tue
+  'kancil',
   'coklat',
-  'muntah',
   'tandas',
-  'teriak', //wed
+  'ketawa', //wed
   'nyamuk',
-  'kancil', //fri - act sat
+  'tompok', //fri - act sat
   'kenapa', //sat - act mon
-  'sangat', //sun - act tue
+  'sardin',
+  'siakap',
+  'kerang',
+  'sotong',
+  'kerapu',
+  'kerisi', //sun - act tue
   'terima', //mon 
   'pernah',
   'banyak',
   'keluar',
   'begitu',
   'dengar',
+  'korban',
+  'kerbau',
   'tempat',
   'lelaki',
   'tunggu',
   'sedang',
   'nampak',
   'monyet',
-  'korban',
-  'kerbau',
   'berada',
   'tetapi',
   'bahawa',
@@ -146,7 +151,7 @@ export const WORDS = [
   'pantai',
   'bangga',
   'haiwan',
-  'ketawa',
+  'teriak',
   'langit',
   'sebaik',
   'tetamu',
