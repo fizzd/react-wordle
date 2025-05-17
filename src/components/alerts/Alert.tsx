@@ -2,7 +2,9 @@ import { Fragment, useEffect } from 'react'
 import { Transition } from '@headlessui/react'
 import classNames from 'classnames'
 import TruffleImage from '../../assets/truffle-ghibli.jpeg'
+import SpecialImage from '../../assets/special.jpeg'
 import { fireConfetti } from '../../util/fireConfetti'
+import { isTodaySunday } from '../../util/dateUtils'
 
 type Props = {
   isOpen: boolean
@@ -17,6 +19,8 @@ export const Alert = ({
   variant = 'warning',
   confetti,
 }: Props) => {
+  const WinImage = isTodaySunday() ? SpecialImage : TruffleImage
+
   const classes = classNames(
     'fixed top-16 left-1/2 transform -translate-x-1/2 max-w-sm w-full shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden',
     {
@@ -47,7 +51,7 @@ export const Alert = ({
           <p className="text-sm text-center font-medium">{message}</p>
           {variant === 'success' && (
             <div className="flex justify-center items-center p-4">
-              <img src={TruffleImage} alt="Success" className="w-50 h-50" />
+              <img src={WinImage} alt="Success" className="w-50 h-50" />
             </div>
           )}
         </div>
