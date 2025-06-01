@@ -37,6 +37,8 @@ import {
 
 import './App.css'
 import { isTodaySunday } from './util/dateUtils'
+import TruffleImage from './assets/truffle-ghibli.jpeg'
+import SpecialImage from './assets/special.jpeg'
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -268,6 +270,7 @@ function App() {
         isOpen={successAlert !== ''}
         variant={variant}
         confetti={true}
+        image={isTodaySunday() ? SpecialImage : TruffleImage}
       />
     </div>
   )
