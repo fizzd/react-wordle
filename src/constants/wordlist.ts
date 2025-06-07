@@ -24,21 +24,27 @@ export const WORDS = [
   'banyak',
   'keluar',
   'begitu',
-  'dengar',
-  'korban',
-  'kerbau',
-  'tempat',
-  'lelaki',
+  'dengar', 
+  'korban', //monday
+  'wanita', //tue
+  'paling', //wed
+  'sayang', //THU
+  'haiwan', //fri
+  'adalah', //sat
+  'kerbau', 
+  'meriah', //thurs
+  'sayang',
+  'lelaki', //thurs
   'tunggu',
   'sedang',
   'nampak',
+  'tempat',
   'monyet',
   'berada',
   'tetapi',
   'bahawa',
   'memang',
   'sekali',
-  'sayang',
   'kereta',
   'sampai',
   'ketika',
@@ -47,8 +53,6 @@ export const WORDS = [
   'tangan',
   'berapa',
   'selalu',
-  'wanita',
-  'paling',
   'pulang',
   'dengan',
   'beliau',
@@ -96,7 +100,6 @@ export const WORDS = [
   'barang',
   'bahasa',
   'celaka',
-  'karena',
   'pegang',
   'peluru',
   'bilang',
@@ -150,7 +153,6 @@ export const WORDS = [
   'hendak',
   'pantai',
   'bangga',
-  'haiwan',
   'teriak',
   'langit',
   'sebaik',

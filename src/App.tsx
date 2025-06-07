@@ -38,7 +38,7 @@ import {
 import './App.css'
 import { isTodaySunday } from './util/dateUtils'
 import TruffleImage from './assets/truffle-ghibli.jpeg'
-import SpecialImage from './assets/special.jpeg'
+import SpecialImage from './assets/special.jpg'
 
 function App() {
   const prefersDarkMode = window.matchMedia(

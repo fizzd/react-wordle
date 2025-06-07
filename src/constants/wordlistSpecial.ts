@@ -4,6 +4,7 @@ export const SPECIAL_WORDS = [
   'azirah',
   'walter',
   'nobita',
+  'normah',
   'tweety',
   'ginger',
   'friday',
