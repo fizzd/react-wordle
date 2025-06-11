@@ -1,4 +1,4 @@
-export const GAME_TITLE = 'Kata Norma'
+export const GAME_TITLE = 'Selamat Hari Jadi Mama!'
 
 export const WIN_MESSAGES = ['Bagus!', 'Hebat', 'Syabas!']
 export const GAME_COPIED_MESSAGE = 'Permainan disalin ke papan keratan'
