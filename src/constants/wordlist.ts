@@ -39,13 +39,15 @@ export const WORDS = [
   'sedang',
   'nampak',
   'tempat',
-  'monyet',
-  'berada',
-  'tetapi',
-  'bahawa',
-  'memang',
-  'sekali',
+  'monyet', //wed?
+  'berada', //thu?
+  'tetapi', //fri
+  'bahawa', //sat
+  'sakura', //mon
+  'gunung',
   'kereta',
+  'menang',
+  'sekali',
   'sampai',
   'ketika',
   'maksud',
@@ -73,7 +75,7 @@ export const WORDS = [
   'negara',
   'kapten',
   'supaya',
-  'menang',
+  'memang',
   'isteri',
   'minggu',
   'khabar',
@@ -142,7 +144,6 @@ export const WORDS = [
   'lokasi',
   'rakyat',
   'sampah',
-  'gunung',
   'dendam',
   'pantas',
   'saling',
