@@ -13,4 +13,12 @@ export const SPECIAL_WORDS = [
   'london',
   'jannah',
   'waffle',
+  'helena',
+  'danial',
+  'hilman',
+  'alfian',
+  'alesha',
+  'fiqran',
+  'harith',
+  'busaba'
 ]
