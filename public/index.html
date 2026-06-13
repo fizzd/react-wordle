@@ -393,7 +393,8 @@ hackthing = (x, y) => {
 levelMenuScroll = 0;
 
 loadlevelmenu = (restoreScroll = false) => {
-	s = `<div class = "little">Solved: ${progress} ✔</div><button class = "little topright" id = "MAINMENU"> Menu </button> <div class="levelrow">`;
+	s = `<div class = "little">Solved: ${progress} ✔</div><button class = "little topright" id = "MAINMENU"> Menu </button>`;
+	s+= `<span class='def'>blue = definition</span><br><span class='wp'>red = wordplay</span><div class="levelrow">`;
 	z = 0;
 	r = 0;
 	opac = 100;
